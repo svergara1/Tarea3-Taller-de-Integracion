@@ -1,0 +1,34 @@
+
+<p id="notice"><%=notice%></p>
+<div class="center big red">
+
+		<h1>SWAPI</h1>
+		<p class="lead">The Star Wars API</p>
+</div>
+
+
+<h1>List of films</h1>
+
+
+
+<table>
+	<thead>
+		<tr>
+			<th>Film Name</th>
+			<th>Year</th>
+			<th>Director</th>
+			<th>Producer(s)</th>			
+			
+		</tr>
+	</thead>
+	<tbody >
+		<% @films.each do |film| %>
+			<tr>
+				<td><%= film['title'] %></td>
+				<td><%= film['release_date'] %></td>
+				<td><%= film['director'] %></td>
+				<td><%= film['producer'] %></td>				
+			</tr>
+		<%end%>
+	</tbody>
+</table>

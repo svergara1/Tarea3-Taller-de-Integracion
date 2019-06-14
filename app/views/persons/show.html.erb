@@ -1,0 +1,68 @@
+<p id="notice"><%=notice%></p>
+
+<h1>Character Information</h1>
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Height</th>
+			<th>Mass</th>
+			<th>Hair Color</th>
+			<th>Skin Color</th>
+			<th>Eye Color</th>
+			<th>Birth Year</th>
+			<th>Gender</th>
+			<th>Species</th>
+			<th>Homeworld</th>			
+		</tr>
+	</thead>
+	<tbody >
+			<tr>
+				<td><%= @person.name %></td>
+				<td><%= @person.height %></td>
+				<td><%= @person.mass %></td>
+				<td><%= @person.hair_color %></td>
+				<td><%= @person.skin_color %></td>
+				<td><%= @person.eye_color %></td>
+				<td><%= @person.birth_year %></td>
+				<td><%= @person.gender %></td>
+				<td><%= @species %></td>
+				<td><li><%= link_to  @planet.name, planet_url(@planet.id) %></li></td>
+			</tr>		
+	</tbody>
+</table>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Films</th>
+		</tr>
+	</thead>
+	<tbody >
+			<% @films.each do |film| %>
+			<tr>
+				<td><li><%= link_to  film.title, film_url(film.id) %></li></td>
+			</tr>
+		<%end%>			
+	</tbody>
+</table>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Starships Name</th>
+			<th>Model</th>
+			<th>Cost in credits</th>
+		</tr>
+	</thead>
+	<tbody >
+			<% @starships.each do |starship| %>
+			<tr>
+				<td><li><%= link_to  starship.name, starship_url(starship.id) %></li></td>
+				<td><%= starship.model %></td>
+				<td><%= starship.cost_in_credits %></td>
+			</tr>
+		<%end%>			
+	</tbody>
+</table>

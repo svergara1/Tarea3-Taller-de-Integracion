@@ -1,0 +1,31 @@
+<% if @planet != [] and @planet != nil %>
+	<% @planet.each do |search| %>
+				<td><li><%= link_to  search['name'], planet_url(search['url'].split('/')[-1]) %></li></td>				
+		<%end%>
+	<%end%>
+
+<% if @person != [] and @person != nil %>
+	<% @person.each do |search| %>
+				<td><li><%= link_to  search['name'], person_url(search['url'].split('/')[-1]) %></li></td>				
+		<%end%>
+	<%end%>
+
+<% if @starship != [] and @starship != nil %>
+	<% @starship.each do |starship| %>
+				<td><li><%= link_to  starship['name'], starship_url(starship['url'].split('/')[-1]) %></li></td>		
+		<%end%>
+	<%end%>
+
+<% if @film != [] and @film != nil %>
+	<% @film.each do |film| %>
+				<td><li><%= link_to  film['title'], film_url(film['episode_id']) %></li></td>			
+		<%end%>
+	<%end%>
+<% if  @film == nil and @planet == nil and @person == nil and @starship == nil %>
+		<h3>No results found. Go back or keep searching!</h3>
+		<td><li><%= link_to  "Go Back", films_url %></li></td>			
+<%end%>
+
+
+
+

@@ -1,0 +1,12 @@
+<div class="center big red">
+		<h1><li><%= link_to  "SWAPI", films_url %></li></h1>
+		<p class="lead">The Star Wars API created by Santiago Vergara</p>
+</div>
+
+<p>
+<%= form_tag(searchbar_index_url method: :get) do %>
+  Search for Name of Film, Character, Planet or Starship: <%= text_field_tag :store %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+</p>

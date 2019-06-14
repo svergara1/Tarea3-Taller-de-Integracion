@@ -1,0 +1,88 @@
+<p id="notice"><%=notice%></p>
+
+<h1>Film Information</h1>
+
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Film Name</th>
+			<th>Director</th>
+			<th>Producer</th>
+			<th>Release Date(s)</th>
+		</tr>
+	</thead>
+	<tbody >
+			<tr>
+				<td><%= @film.title %></td>
+				<td><%= @film.director %></td>
+				<td><%= @film.producers %></td>
+				<td><%= @film.release_date %></td>
+			</tr>		
+	</tbody>
+</table>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Opening Crawl</th>
+		</tr>
+	</thead>
+	<tbody >
+			<tr>
+				<td><%= @film.opening_crawl %></td>
+			</tr>		
+	</tbody>
+</table>
+
+<table class="table table-striped" >
+	<thead>
+		<tr>
+			<th>Planets</th>
+		</tr>
+	</thead>
+	<tbody >
+			<% @planets.each do |planet| %>
+			<tr>
+				<td><li><%= link_to  planet.name, planet_url(planet.id) %></li></td>		
+			</tr>
+		<%end%>	
+	</tbody>
+</table>
+
+<table class="table table-striped" >
+	<thead>
+		<tr>
+			<th>Starships</th>
+		</tr>
+	</thead>
+	<tbody >
+			<% @starships.each do |starship| %>
+			<tr>
+				
+				<td><li><%= link_to  starship.name, starship_url(starship.id) %></li></td>		
+			</tr>
+		<%end%>	
+	</tbody>
+</table>
+
+<table class="table table-striped" >
+	<thead>
+		<tr>
+			<th>Characters</th>
+		</tr>
+	</thead>
+	<tbody >
+			<% @characters.each do |character| %>
+			<tr>
+				
+				<td><li><%= link_to  character.name, person_url(character.id) %></li></td>			
+			</tr>
+		<%end%>	
+	</tbody>
+</table>
+
+
+
+
+
